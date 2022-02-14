@@ -1,5 +1,5 @@
 # firetag goat
 # command to run:
 
-`npm install http-server -g
+`npm install http-server -g <br />
 http-server`
