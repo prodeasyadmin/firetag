@@ -1,6 +1,6 @@
 
-const {Client} = require("@googlemaps/google-maps-services-js");
-
+// const {Client} = require("@googlemaps/google-maps-services-js");
+// const axios = require('axios');
 
 let map, infoWindow;
 
@@ -30,7 +30,11 @@ function initAutocomplete() {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
     };
-  
+    let resp = axios.post('/addname', pos, () => {
+      console.log('resp',2,  resp);
+
+    });
+    console.log('resp', resp);
     map.setCenter(pos);
     new google.maps.Marker({
       position: pos,
@@ -111,3 +115,9 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+
+// let resp = axios.post('/addname', pos).then(() => {
+//   console.log('resp',2,  resp);
+
+// });
+// console.log('resp', resp);
