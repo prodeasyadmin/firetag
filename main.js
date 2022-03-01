@@ -35,6 +35,9 @@ function initAutocomplete() {
 
     });
     console.log('resp', resp);
+    
+    
+    
     map.setCenter(pos);
     new google.maps.Marker({
       position: pos,
