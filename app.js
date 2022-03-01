@@ -4,7 +4,7 @@ const path = require('path');
 const router = express.Router();
 
 var app = express();
-var port = 8082;
+var port = 8080;
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -64,4 +64,3 @@ app.use(express.static('.', options))
 app.listen(port, ()=>{
     console.log("Server listening to port"+port)
 })
-
