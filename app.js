@@ -10,12 +10,10 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require("mongoose");
-mongoose.Promise = global.Promise;mongoose.connect("mongodb://localhost:27017/node-demo");
-var nameSchema = new mongoose.Schema({
-    firstName: String,
-    lastNameName: String
-   });
-var User = mongoose.model("User", nameSchema);
+var position = new mongoose.Schema({});    
+var User = mongoose.model("User", position);
+
+
 router.post("/addname", (req, res) => {
     console.log('received', req.body);
     var myData = new User(req.body);
@@ -33,18 +31,32 @@ router.post("/addname", (req, res) => {
 //  res.sendFile(__dirname + "/index.html");
 // });
 
+
+
+
+
 router.get('/static/:file',function(req,res){
 file = req.params.file || 'index.html';
 console.log('r', file)
 res.sendFile(path.join(__dirname, file));
-//__dirname : It will resolve to your project folder.
 // express.static( __dirname )
 });
 
+
+
+
+
+
 // router.get('/main.js',function(req,res){
 // res.sendFile(path.join(__dirname,'/main.js'));
-// //__dirname : It will resolve to your project folder.
+// __dirname : It will resolve to your project folder.
 // });
+
+
+
+
+
+
 
 app.use('/', router);
 var options = {

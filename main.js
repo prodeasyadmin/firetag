@@ -6,7 +6,9 @@ let map, infoWindow;
 
 
 
-
+function main(){
+  
+}
   // searchbox
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
@@ -19,7 +21,7 @@ function initAutocomplete() {
   
 
   
-  var x=document.getElementById("demo");
+  // var x=document.getElementById("demo");
   function getLocation()
    {
   if (navigator.geolocation)
@@ -30,13 +32,13 @@ function initAutocomplete() {
       lat: position.coords.latitude,
       lng: position.coords.longitude,
     };
-    let resp = axios.post('/addname', pos, () => {
-      console.log('resp',2,  resp);
+    
+  let resp = axios.post('/addname', pos, () => {
+        console.log('resp',2,  resp);
+    
+      });
+      console.log('resp', resp);
 
-    });
-    console.log('resp', resp);
-    
-    
     
     map.setCenter(pos);
     new google.maps.Marker({
@@ -52,8 +54,10 @@ function initAutocomplete() {
   }
   else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
-  getLocation()
-  
+  // document.getElementById("clickme").onclick = getLocation();
+  document.getElementById("clickMe").addEventListener("click",function(){
+    getLocation();
+  });
   
   
   const input = document.getElementById("pac-input");
